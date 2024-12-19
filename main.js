@@ -7,13 +7,15 @@ abbcccdddd, hippy.
 http://www.naver.com
 `;
 
-// const regexp = new RegExp('the', 'g');
-// const regexp = /the/gi;  regular expression
-
 /*
+ const regexp = new RegExp('the', 'g');
+ const regexp = /the/gi;  regular expression
+
+
 let regexp = /./gi;
 regexp = /\.$/gi;  
-regexp = /\.$/gim;  
+regexp = /\.$/gim;
+*/  
 
 //Pattern (string)
 console.log('(1)', str.match(/^the/g)); 
@@ -48,8 +50,25 @@ console.log('(4)', str.match(/[a-zA-Z0-9_]/g)); //a~z, A~Z, 0~9, _
 
 console.log('(5)', str.match(/\s/g));
 console.log('(6)', str.match(/[ \t\n\r]/g)); // 공백, \tab, \n,\r 
-*/
 
+
+//Regular Expression
 console.log('(1)', str.match(/b{2}/g));
 console.log('(2)', str.match(/c{1,3}/g));
 console.log('(3)', str.match(/d{1,}/g));
+
+console.log('(4)', str.match(/\w{3,5}/g)); //word character가 3~5회 구성된 문자열 모두 탐색
+console.log('(5)', str.match(/\b\w{3,}\b/g)); // \b: word boundary, word character가 아닌 문자로 경계가 만들어짐
+
+console.log('(6)', str.match(/(the)/g));
+console.log('(7)', str.match(/(bb|cc|dd|pp)/g));
+console.log('(8)', str.match(/(\/\/)/g));
+console.log('(9)', str.match(/(\.w{5,}\.)/g));
+
+
+//methods
+let regexp = /fox/gi;
+console.log(regexp.test(str));
+
+regexp = /bear/gi;
+console.log(regexp.test(str));
